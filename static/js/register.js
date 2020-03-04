@@ -87,22 +87,22 @@ $(function(){
 		
 	}
 
-	function check_email(){
-		var re = /^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$/;
-
-		if(re.test($('#email').val()))
-		{
-			$('#email').next().hide();
-			error_email = false;
-		}
-		else
-		{
-			$('#email').next().html('你输入的邮箱格式不正确')
-			$('#email').next().show();
-			error_check_password = true;
-		}
-
-	}
+	// function check_email(){
+	// 	var re = /^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$/;
+	//
+	// 	if(re.test($('#email').val()))
+	// 	{
+	// 		$('#email').next().hide();
+	// 		error_email = false;
+	// 	}
+	// 	else
+	// 	{
+	// 		$('#email').next().html('你输入的邮箱格式不正确')
+	// 		$('#email').next().show();
+	// 		error_check_password = true;
+	// 	}
+	//
+	// }
 
 
 	$('#reg_form').submit(function() {
