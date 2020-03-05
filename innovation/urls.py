@@ -20,4 +20,5 @@ from qingShang import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('qing/', include('qingShang.urls')),
+    path('',views.login),
 ]

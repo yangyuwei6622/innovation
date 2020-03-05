@@ -30,3 +30,9 @@ def register_handle(request):
 def login(request):
 
     return render(request, 'login.html')
+def login_handle(request):
+
+    return redirect(request, 'index.html')
+def index(request):
+
+    return render(request,'index.html')
