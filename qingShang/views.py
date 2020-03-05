@@ -29,10 +29,24 @@ def register_handle(request):
     return redirect('/qing/login/')
 def login(request):
 
+
     return render(request, 'login.html')
 def login_handle(request):
-
-    return redirect(request, 'index.html')
+    name = request.POST.get('username')
+    pwd = request.POST.get('pwd')
+    s1 = sha1()
+    s1.update(pwd.encode("utf8"))
+    pwd2 = s1.hexdigest()
+    print(name)
+    num = UserInfo.objects.filter(uName = 'yangyuwei').count()
+    if num == 1:
+        user = UserInfo.objects.get(uName=name)
+        if user.uPwd == pwd2:
+            return redirect('/qing/index/')
+        else:
+            return render(request, 'login.html')
+    else:
+        return render(request, 'login.html')
 def index(request):
 
     return render(request,'index.html')
