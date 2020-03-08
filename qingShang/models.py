@@ -13,7 +13,9 @@ class UserInfo(models.Model):
 class TypeInfo(models.Model):
     tTitle = models.CharField(max_length=30 )
     isDelete = models.BooleanField(default=False)
-class shopInfo(models.Model):
+    def __str__(self):
+        return self.tTitle
+class ShopInfo(models.Model):
     sTitle = models.CharField(max_length=50)
     sPic = models.ImageField(upload_to='shops')
     sPrice= models.DecimalField(max_digits= 5 ,decimal_places=2)
@@ -22,8 +24,11 @@ class shopInfo(models.Model):
     sStar = models.IntegerField()
     sContent = models.CharField(max_length=600)
     sBrief = models.CharField(max_length=200)
-    sType = models.ForeignKey(TypeInfo)
+    sType = models.ForeignKey(TypeInfo,on_delete=models.CASCADE)
     #sAdv = models.BooleanField(default=False)
+    def __str__(self):
+        return self.sTitle
+
 
 
 
